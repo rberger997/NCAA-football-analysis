@@ -35,9 +35,7 @@ sp <- sp[-c(26,52,78,104),]
 sp[26,]
 
 # 3 columns have same title (Rk). Change the names of the rank columns to prevent error 
-colnames(sp)[6] <- 'sp rank'
-colnames(sp)[8] <- 'off rank'
-colnames(sp)[10] <- 'def rank'
+colnames(sp)[c(6,8,10)] <- c('sp rank', 'off rank', 'def rank')
 
 # Separate wins and losses 
 sp <- separate(sp, Rec., c('W','L'),sep = '-',remove = TRUE)
@@ -71,4 +69,3 @@ write.csv(sp, file = csv_filename, row.names = FALSE, na = "")
 rm(sp_table,url,webpage,sp,csv_filename,current_date)
 
 # Done
-
