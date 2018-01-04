@@ -12,9 +12,10 @@
 #      Adapted from David Radcliffe (https://rpubs.com/Radcliffe/superbowl)
 ################################################################
 
-install.packages('rvest')
-install.packages('stringr')
-install.packages('tidyr')
+# Packages needed (if not already installed)
+# install.packages('rvest')
+# install.packages('stringr')
+# install.packages('tidyr')
 
 library(rvest)
 library(stringr)
@@ -54,7 +55,7 @@ head(sp)
 
 # Make all columns except team name numeric data instead of character
 sp[,2:4] <- lapply(sp[,2:4], as.numeric)
-?lapply
+
 # Calculate 2nd order win differential. Do this before making column numeric or you'll get NA for everything 
 sp$Differential <- sp$second_order_w - sp$W
 
